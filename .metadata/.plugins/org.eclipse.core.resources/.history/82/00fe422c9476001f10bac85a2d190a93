@@ -1,0 +1,24 @@
+package com.salestax;
+
+import java.util.List;
+
+public class Receipt {
+
+	private List<Product> products;
+	private Tax basicTax;
+	private Tax importDutyTax;
+	
+
+
+public Receipt(List<Product> products,Tax basicTax, Tax importDutyTax) {
+	this.products=products;
+	this.basicTax=basicTax;
+	this.importDutyTax=importDutyTax;
+}
+
+
+
+
+
+
+}

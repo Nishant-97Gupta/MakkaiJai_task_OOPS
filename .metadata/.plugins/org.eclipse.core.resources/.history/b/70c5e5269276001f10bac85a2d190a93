@@ -1,0 +1,9 @@
+package com.salestax;
+
+public class ImportDutyTax extends Tax {
+
+	private static final double ImportDutyRate=0.05;
+	
+	
+	
+}

@@ -1,0 +1,39 @@
+package com.salestax;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        Tax basicTax = new Tax();
+        Tax importDutyTax = new Tax();
+        TaxCalculator taxCalculator = new TaxCalculator(basicTax, importDutyTax);
+
+        List<Product> products1 = new ArrayList<>();
+        products1.add(new Product("1 book", 12.49, false, true));
+        products1.add(new Product("1 music CD", 14.99, false, false));
+        products1.add(new Product("1 chocolate bar", 0.85, false, true));
+
+        List<Product> products2 = new ArrayList<>();
+        products2.add(new Product("1 imported box of chocolates", 10.00, true, false));
+        products2.add(new Product("1 imported bottle of perfume", 47.50, true, false));
+
+        List<Product> products3 = new ArrayList<>();
+        products3.add(new Product("1 imported bottle of perfume", 27.99, true, false));
+        products3.add(new Product("1 bottle of perfume", 18.99, false, false));
+        products3.add(new Product("1 packet of headache pills", 9.75, false, true));
+        products3.add(new Product("1 box of imported chocolates", 11.25, true, false));
+
+        System.out.println("Receipt 1:");
+        Receipt receipt1 = new Receipt(products1, taxCalculator);
+        receipt1.printReceipt();
+
+        System.out.println("\nReceipt 2:");
+        Receipt receipt2 = new Receipt(products2, taxCalculator);
+        receipt2.printReceipt();
+
+        System.out.println("\nReceipt 3:");
+        Receipt receipt3 = new Receipt(products3, taxCalculator);
+        receipt3.printReceipt();
+    }
+}

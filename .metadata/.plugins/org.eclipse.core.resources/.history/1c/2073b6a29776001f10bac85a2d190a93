@@ -1,0 +1,24 @@
+package com.salestax;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+ 
+       	public static void main(String[] args) {
+       		
+       		Tax basicTax= new Tax();
+       		Tax importDutyTax=new Tax();
+       		
+       		
+       		
+       		TaxCalculator taxCalculator=new TaxCalculator(basicTax,importDutyTax);;
+       		
+       		List<Product> product1=new ArrayList<>();       		
+       		product1.add
+       		
+       		
+       		
+       		
+       		}
+}

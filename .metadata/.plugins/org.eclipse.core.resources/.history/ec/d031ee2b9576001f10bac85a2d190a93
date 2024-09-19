@@ -1,0 +1,47 @@
+package com.salestax;
+
+import java.util.List;
+
+public class Receipt {
+
+	private List<Product> products;
+	private Tax basicTax;
+	private Tax importDutyTax;
+	
+
+
+public Receipt(List<Product> products,Tax basicTax, Tax importDutyTax) {
+	this.products=products;
+	this.basicTax=basicTax;
+	this.importDutyTax=importDutyTax;
+}
+
+public void printReceipt() {
+	
+	double totalSalesTax=0.0;
+	double totalPrice=0.0;
+	
+	for(int i=1;i<products.size();i++) {
+		Product product=products.get(i);
+		double productTax=basicTax.calculateTax(product)+importDutyTax.calculateTax(product);
+		double productPriceWithTax=productTax+product.getPrice();
+		
+		
+		 System.out.println(product.getName() + ": " + String.format("%.2f", productPriceWithTax));
+		 
+		 totalSalesTax+=productTax;
+		 totalPrice+=productPriceWithTax;
+		 
+	}
+	
+
+    System.out.println("Sales Taxes: " + String.format("%.2f", totalSalesTax));
+    System.out.println("Total: " + String.format("%.2f", totalPrice));
+	
+	
+}
+
+
+
+
+}
