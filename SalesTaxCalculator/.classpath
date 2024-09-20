@@ -5,6 +5,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="E:/Interview material 2024/junit-jupiter-api-5.10.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/Interview material 2024/junit-jupiter-engine-5.10.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/Interview material 2024/hamcrest-core-2.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

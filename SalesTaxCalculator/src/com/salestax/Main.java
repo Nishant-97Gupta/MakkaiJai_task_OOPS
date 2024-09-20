@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
         Tax basicTax = new BasicTax();
         Tax importDutyTax = new ImportDutyTax();
         TaxCalculator taxCalculator = new TaxCalculator(basicTax, importDutyTax);
@@ -37,5 +38,32 @@ public class Main {
         Receipt receipt3 = new Receipt(products3, taxCalculator);
         receipt3.printReceipt();
 
+        
+
+        List<Product> products = new ArrayList<>();
+        String moreProducts = "yes";
+
+        while (moreProducts.equalsIgnoreCase("yes")) {
+            System.out.println("Enter product name:");
+            String name = scanner.nextLine();
+
+            System.out.println("Enter product price:");
+            double price = scanner.nextDouble();
+
+            System.out.println("Is the product imported (true/false)?");
+            boolean isImported = scanner.nextBoolean();
+
+            System.out.println("Is the product tax-exempt (true/false)?");
+            boolean isTaxExempt = scanner.nextBoolean();
+            
+            products.add(new Product(name, price, isImported, isTaxExempt));
+
+            System.out.println("Do you want to add more products? (yes/no)");
+            scanner.nextLine();
+            moreProducts = scanner.nextLine();
+        }
+
+        Receipt receipt = new Receipt(products, taxCalculator);
+        receipt.printReceipt();
     }
 }
